@@ -23,6 +23,7 @@ class Register extends React.Component {
                 id="username"
                 type="text"
                 name="username"
+                required
                 autoFocus
               />
             </div>
@@ -35,6 +36,7 @@ class Register extends React.Component {
                 id="password"
                 type="password"
                 name="password"
+                required
               />
             </div>
             <div className={s.formGroup}>

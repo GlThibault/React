@@ -1,7 +1,7 @@
 @import '../variables.css';
 
 :root {
-  --brand-color: #000;
+  --brand-color: #fff;
 }
 
 .root {
@@ -18,7 +18,7 @@
 .brand {
   color: color(var(--brand-color) lightness(+10%));
   text-decoration: none;
-  font-size: 1.75em; /* ~28px */
+  font-size: 2em;
 }
 
 .brandTxt {

@@ -18,6 +18,7 @@ import models from './data/models';
 import schema from './data/schema';
 import assets from './assets.json'; // eslint-disable-line import/no-unresolved
 import { port, auth } from './config';
+import register from './core/register';
 
 const app = express();
 
@@ -46,9 +47,13 @@ app.use(expressJwt({
 }));
 app.use(passport.initialize());
 
+
 if (__DEV__) {
   app.enable('trust proxy');
 }
+app.post('/login',
+  passport.authenticate('local', { successRedirect: '/', failureRedirect: '/login' }),
+);
 app.get('/login/facebook',
   passport.authenticate('facebook', { scope: ['email', 'user_location'], session: false }),
 );
@@ -61,7 +66,18 @@ app.get('/login/facebook/return',
     res.redirect('/');
   },
 );
-
+app.post('/register', (req, res) => {
+  const result = register(req, res);
+  if (result !== 0) {
+    res.redirect('/register');
+  } else {
+    res.redirect('/');
+  }
+});
+app.get('/logout', (req, res) => {
+  req.logout();
+  res.redirect('/');
+});
 //
 // Register API middleware
 // -----------------------------------------------------------------------------

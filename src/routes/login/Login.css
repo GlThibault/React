@@ -55,9 +55,9 @@
   padding: 10px 16px;
   width: 100%;
   outline: 0;
-  border: 1px solid #373277;
+  border: 1px solid #dd4b39;
   border-radius: 0;
-  background: #373277;
+  background: #dd4b39;
   color: #fff;
   text-align: center;
   text-decoration: none;
@@ -67,7 +67,7 @@
 }
 
 .button:hover {
-  background: rgba(54, 50, 119, 0.8);
+  background: #c23321;
 }
 
 .button:focus {

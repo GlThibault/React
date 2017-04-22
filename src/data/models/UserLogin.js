@@ -13,6 +13,11 @@ const UserLogin = Model.define('UserLogin', {
     primaryKey: true,
   },
 
+  password: {
+    type: DataType.STRING(255),
+    primaryKey: true,
+  },
+
 });
 
 export default UserLogin;
